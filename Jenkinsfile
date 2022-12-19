@@ -7,11 +7,11 @@
 
 //Declarative 
 pipeline{
-	agent {docker {image 'python:3.12-rc-bullseye'}}
+	agent {docker {image 'maven:3-openjdk-18'}}
 	stages{
 		stage('Build'){
 			steps{
-				sh 'python --version'
+				sh 'mvn --version'
 				echo "Build"
 				
 			}
