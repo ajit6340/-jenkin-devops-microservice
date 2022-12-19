@@ -26,6 +26,10 @@ pipeline{
 			steps{
 				
 				echo "Test"
+				echo "BUILD_ID-$env.BUILD_ID"
+				echo "JOB_NAME-$env.JOB_NAME"
+				echo "BUILD_URL-$env.BUILD_URL"
+				echo "JOB_URL-$env.JOB_URL"
 			}
 		}
 		stage('Integration Test'){
