@@ -7,10 +7,11 @@
 
 //Declarative 
 pipeline{
-	agent any
+	agent {docker {image 'python:3.12-rc-bullseye'}}
 	stages{
 		stage('Build'){
 			steps{
+				sh 'python --version'
 				echo "Build"
 				
 			}
@@ -26,6 +27,17 @@ pipeline{
 				
 				echo "Integration Test"
 			}
+		}
+	}
+	post{
+		always{
+			echo "I am awesome"
+		}
+		success{
+			echo "success"
+		}
+		failure{
+			echo "fail"
 		}
 	}
 }
